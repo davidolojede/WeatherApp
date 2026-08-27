@@ -3,9 +3,10 @@ const endPoint = `https://api.openweathermap.org/data/2.5/weather?q=lagos&appid=
 
 const displayUnits = async() => {
     try {
-        // const userInput = document.getElementById("city-search").value
-        const userInput = "lagos"
-        const endPoint = `https://api.openweathermap.org/data/2.5/weather?q=${userInput}&appid=${APIKey}&units=metric`
+        const userInput = document.getElementById("city-search").value
+        const city = userInput || "lagos"
+        const endPoint = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}&units=metric`
+        const errorMessage = document.getElementById("error-message")
         const location = document.getElementById("location-label")
         const temp = document.getElementById("temperature")
         const pressure = document.getElementById("pressure-value")
@@ -15,7 +16,13 @@ const displayUnits = async() => {
 
         const response = await fetch(endPoint)
         const result = await response.json()
-        console.log(result);
+
+        errorMessage.innerHTML = ""
+
+        if (!response.ok) {
+            errorMessage.innerHTML = "Country not found. Please try again."
+            return
+        }
 
         location.innerHTML = `${result.name}, ${result.sys.country}`
         temp.innerHTML = `${result.main.temp}°`
