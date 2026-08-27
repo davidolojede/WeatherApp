@@ -28,7 +28,7 @@
     <!-- Search -->
     <form class="search-bar" role="search" aria-label="Search for a city" onsubmit="return false;">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      <input class="search-input" id="city-search" type="text" placeholder="Search for a city or airport" autocomplete="off" />
+      <input onchange="fetchInfo()" class="search-input" id="city-search" type="text" placeholder="Search for a city or airport" autocomplete="off" />
     </form>
  
     <h1 class="heading">About Today</h1>
@@ -71,7 +71,7 @@
       </svg>
     </div>
  
-    <p class="date" id="today-date">Wednesday, 25 May</p>
+    <p class="desc" id="desc">Overcast clouds</p>
     <p class="temp" id="temperature">19<sup>°</sup></p>
  
     <!-- Stats -->
@@ -80,8 +80,8 @@
         <span class="stat-icon" aria-hidden="true">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 16.5c0 1.9-1.6 3.5-3.5 3.5S1 18.4 1 16.5 4.5 11 4.5 11 8 14.6 8 16.5z"/><path d="M17.5 3.5c3 0 5.5 2.5 5.5 5.5s-2.5 5.5-5.5 5.5H7"/></svg>
         </span>
-        <span class="stat-value" id="rain-value">90%</span>
-        <span class="stat-label">Rain</span>
+        <span class="stat-value" id="pressure-value">90%</span>
+        <span class="stat-label">Pressure</span>
       </div>
       <div class="stat-card">
         <span class="stat-icon" aria-hidden="true">
@@ -98,8 +98,8 @@
         <span class="stat-label">Humidity</span>
       </div>
     </div>
- 
   </main>
 </body>
+<script src="/weather.js"></script>
 </html>
  
