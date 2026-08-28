@@ -57,7 +57,7 @@ body {
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    min-height: 100vh;
+    min-height: 100%;
     border-radius: 0;
     padding: clamp(20px, 5vw, 40px) clamp(18px, 6vw, 60px) clamp(24px, 6vw, 60px);
     background: transparent;
