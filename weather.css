@@ -1,5 +1,4 @@
 :root {
-    /* ---- design tokens ---- */
     --outer-bg-1: #e9e6f7;
     --outer-bg-2: #d6ccf0;
     --outer-bg-3: #c9c0ea;
@@ -50,7 +49,6 @@ body {
     background-attachment: fixed;
 }
 
-/* ---------------- App card: fills the viewport at every size ---------------- */
 .app-card {
     position: relative;
     display: flex;
@@ -80,7 +78,7 @@ body {
     pointer-events: none;
 }
 
-/* ---------------- Top bar ---------------- */
+/* TOP BAR */
 .topbar {
     display: flex;
     align-items: center;
@@ -132,7 +130,7 @@ body {
     color: var(--accent-2);
 }
 
-/* ---------------- Search ---------------- */
+/* SEARCH BAR */
 .search-bar {
     position: relative;
     z-index: 2;
@@ -177,7 +175,10 @@ body {
     padding: 12px 0;
 }
 
-/* ---------------- Heading ---------------- */
+#error-message {
+    color:red;
+}
+/* HEADING */
 .heading {
     position: relative;
     z-index: 2;
@@ -188,35 +189,15 @@ body {
     letter-spacing: -0.01em;
 }
 
-/* ---------------- Illustration ---------------- */
-.illustration-wrap {
-    position: relative;
-    z-index: 1;
-    display: grid;
-    place-items: center;
-    margin: 10px 0 4px;
-    min-height: clamp(140px, 32vw, 180px);
+#img-container {
+    align-self:center;   
 }
 
-.illustration-glow {
-    position: absolute;
-    width: 60%;
-    aspect-ratio: 1;
-    background: radial-gradient(circle, var(--card-glow), transparent 70%);
-    filter: blur(6px);
+#weather-img{
+    width: 200px;
 }
 
-#weather-illustration {
-    width: clamp(140px, 40vw, 190px);
-    height: auto;
-    position: relative;
-}
-
-.drop {
-    opacity: 1;
-}
-
-/* ---------------- Date & Temp ---------------- */
+/* TEMP */
 .desc {
     text-align: center;
     color: var(--ink-70);
@@ -248,7 +229,7 @@ body {
     top: -0.5em;
 }
 
-/* ---------------- Stats ---------------- */
+/* STATS */
 .stats-grid {
     position: relative;
     z-index: 2;
@@ -290,7 +271,7 @@ body {
     color: var(--ink-45);
 }
 
-/* ---------------- Responsive scaling up ---------------- */
+/* RESPONSIVE SCALING UP */
 @media (min-width: 640px) {
     .app-card .content {
         max-width: 480px;

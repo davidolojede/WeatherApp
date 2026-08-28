@@ -1,7 +1,7 @@
 const APIKey = "99d8c432e3d1da65db4ab7f4eb408754"
 const endPoint = `https://api.openweathermap.org/data/2.5/weather?q=lagos&appid=${APIKey}&units=metric`
 
-const displayUnits = async() => {
+const displayUnits = async () => {
     try {
         const userInput = document.getElementById("city-search").value
         const city = userInput || "lagos"
@@ -30,10 +30,22 @@ const displayUnits = async() => {
         wind.innerHTML = `${result.wind.deg} km/h`
         humidity.innerHTML = `${result.main.humidity}%`
         description.innerHTML = `${result.weather[0].description}`
+
+        const weatherImg = document.getElementById("img-container")
+        if (result.main.temp <= 10) {
+            weatherImg.innerHTML = `<img id="weather-img" src="./temp/very-cold.png" alt="">`
+        } else if (result.main.temp <= 20) {
+            weatherImg.innerHTML = `<img id="weather-img" src="./temp/cool.png" alt="">`
+        } else if (result.main.temp <= 28) {
+            weatherImg.innerHTML = `<img id="weather-img" src="./temp/hot.png" alt="">`
+        } else {
+            weatherImg.innerHTML = `<img id="weather-img" src="./temp/very_hot.png" alt="">`
+        }
     } catch (error) {
         console.log(error);
     }
 }
+
 displayUnits()
 
 const fetchInfo = async () => {
